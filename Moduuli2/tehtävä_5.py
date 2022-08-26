@@ -13,11 +13,3 @@ luodit = float(luodit_str) * LUOTI
 tulos = (leiviskät + naulat + luodit)
 kilot = int(tulos / 1000)
 print("Massa nykymittojen mukaan:\n" + str(kilot) + " kilogrammaa ja", str(round(tulos%1000, 2)) + " grammaa.")
-
-
-
-
-
-
-
-
