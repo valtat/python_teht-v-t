@@ -7,7 +7,7 @@ while True:
         fnum = float(numero)
 
     except:
-        print("Väärä syöte")
+        print("Väärä nimi")
         continue
 
     numerot.append(fnum)
