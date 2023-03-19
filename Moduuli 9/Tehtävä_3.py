@@ -4,6 +4,7 @@ class Auto:
         self.huippunopeus = huippunopeus
         self.nopeus = 0
         self.matka = 0
+        self.aika = 0
 
     def kiihdytä(self, muutos):
         self.nopeus += muutos
@@ -13,7 +14,8 @@ class Auto:
             self.nopeus = 0
 
     def kulje(self, aika):
-        self.matka = self.nopeus * aika
+        kuljettu_matka = self.nopeus * aika
+        self.matka += kuljettu_matka
 
 
 auto = Auto("ABC-123", 142)
@@ -22,6 +24,6 @@ print(f"Auton nopeus on {auto.nopeus}km/h ja kuljettu matka on {auto.matka}km.")
 
 
 auto.kiihdytä(50)
-auto.matka(1)
+auto.kulje(1.5)
 
 print(f"Auton nopeus on {auto.nopeus}km/h ja kuljettu matka on {auto.matka}km.")
