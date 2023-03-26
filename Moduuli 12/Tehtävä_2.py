@@ -1,10 +1,8 @@
-import json
 import requests
-import datetime as dt
 
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
 API_key = "23f0783bb262c26c76ac51ca05024b57"
-CITY = input("Hae kaupunking lämpötila: ")
+CITY = input("Hae kaupungin lämpötila: ")
 
 def kelvin_celsiukseksi(kelvin):
     celsius = kelvin - 273.15
