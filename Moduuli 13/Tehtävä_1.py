@@ -1,21 +1,22 @@
-from flask import Flask
+from flask import Flask, Response
 import json
 
 app = Flask(__name__)
 @app.route('/alkuluku/<luku>')
-def summa(luku):
+def alkuluku_tarkistus(luku):
     try:
         luku = int(luku)
-        boolean = False
         if luku <= 1:
-            boolean == False
+            boolean = False
         else:
             for i in range(2, luku):
                 if (luku % i) == 0:
+                    boolean = False
                     break
             else:
-                boolean == True
+                boolean = True
 
+        tilakoodi = 200
         vastaus = {
             "Number": luku,
             "isPrime": boolean
@@ -29,7 +30,7 @@ def summa(luku):
         }
 
     jsonvast = json.dumps(vastaus)
-        return Response(response=jsonvast, status=tilakoodi, mimetype="application/json")
+    return Response(response=jsonvast, status=tilakoodi, mimetype="application/json")
 
 @app.errorhandler(404)
 def page_not_found(virhekoodi):
